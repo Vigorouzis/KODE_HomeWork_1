@@ -42,31 +42,27 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/sum"
+            android:id="@+id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="summation"
             android:text="+" />
 
         <Button
             android:id="@+id/subtraction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="minus"
             android:text="-" />
 
         <Button
             android:id="@+id/multiplication"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="multiply"
             android:text="*" />
 
         <Button
             android:id="@+id/division"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="div"
             android:text="/" />
 
     </LinearLayout>

@@ -12,73 +12,66 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        summary.setOnClickListener {
+            val cifra_1 = operand_1.text.toString()
+            val cifra_2 = operand_2.text.toString()
 
-    }
-
-    fun summation(view: View) {
-        val cifra_1 = operand_1.text.toString()
-        val cifra_2 = operand_2.text.toString()
-
-        if ((cifra_1 == "" && cifra_2 == "") || (cifra_1 == "" || cifra_2 == ""))
-            Snackbar.make(root_layout, "Данные не введены ", Snackbar.LENGTH_SHORT).show()
-
-
+            if ((cifra_1 == "" && cifra_2 == "") || (cifra_1 == "" || cifra_2 == ""))
+                Snackbar.make(root_layout, "Данные не введены ", Snackbar.LENGTH_SHORT).show()
             else {
                 val sum: Double = cifra_1.toDouble() + cifra_2.toDouble()
 
                 result.text = sum.toString()
             }
-    }
-
-    fun minus(view: View) {
-        val cifra_1 = operand_1.text.toString()
-        val cifra_2 = operand_2.text.toString()
-
-        if ((cifra_1 == "" && cifra_2 == "") || (cifra_1 == "" || cifra_2 == ""))
-            Snackbar.make(root_layout, "Данные не введены ", Snackbar.LENGTH_SHORT).show()
-
-
-        else {
-            val sum: Double = cifra_1.toDouble() - cifra_2.toDouble()
-
-            result.text = sum.toString()
         }
-    }
 
-    fun multiply(view: View) {
-        val cifra_1 = operand_1.text.toString()
-        val cifra_2 = operand_2.text.toString()
+        subtraction.setOnClickListener {
+            val cifra_1 = operand_1.text.toString()
+            val cifra_2 = operand_2.text.toString()
 
-        if ((cifra_1 == "" && cifra_2 == "") || (cifra_1 == "" || cifra_2 == ""))
-            Snackbar.make(root_layout, "Данные не введены ", Snackbar.LENGTH_SHORT).show()
+            if ((cifra_1 == "" && cifra_2 == "") || (cifra_1 == "" || cifra_2 == ""))
+                Snackbar.make(root_layout, "Данные не введены ", Snackbar.LENGTH_SHORT).show()
+            else {
+                val sum: Double = cifra_1.toDouble() - cifra_2.toDouble()
 
-
-        else {
-            val sum: Double = cifra_1.toDouble() * cifra_2.toDouble()
-
-            result.text = sum.toString()
-        }
-    }
-
-    fun div(view: View) {
-        val cifra_1 = operand_1.text.toString()
-        val cifra_2 = operand_2.text.toString()
-
-        if ((cifra_1 == "" && cifra_2 == "") || (cifra_1 == "" || cifra_2 == ""))
-            Snackbar.make(root_layout, "Данные не введены ", Snackbar.LENGTH_SHORT).show()
-        else
-            if (cifra_2.toDouble() == 0.0) {
-                Snackbar.make(
-                    root_layout,
-                    "Второе число не может равняться 0, если вы хотите делить",
-                    Snackbar.LENGTH_SHORT
-                ).show()
-            } else {
-                val sum: Double = cifra_1.toDouble() / cifra_2.toDouble()
                 result.text = sum.toString()
             }
+        }
+
+        multiplication.setOnClickListener {
+            val cifra_1 = operand_1.text.toString()
+            val cifra_2 = operand_2.text.toString()
+
+            if ((cifra_1 == "" && cifra_2 == "") || (cifra_1 == "" || cifra_2 == ""))
+                Snackbar.make(root_layout, "Данные не введены ", Snackbar.LENGTH_SHORT).show()
+            else {
+                val sum: Double = cifra_1.toDouble() * cifra_2.toDouble()
+
+                result.text = sum.toString()
+            }
+        }
+
+        division.setOnClickListener {
+            val cifra_1 = operand_1.text.toString()
+            val cifra_2 = operand_2.text.toString()
+
+            if ((cifra_1 == "" && cifra_2 == "") || (cifra_1 == "" || cifra_2 == ""))
+                Snackbar.make(root_layout, "Данные не введены ", Snackbar.LENGTH_SHORT).show()
+            else
+                if (cifra_2.toDouble() == 0.0) {
+                    Snackbar.make(
+                        root_layout,
+                        "Второе число не может равняться 0, если вы хотите делить",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
+                } else {
+                    val sum: Double = cifra_1.toDouble() / cifra_2.toDouble()
+                    result.text = sum.toString()
+                }
+
+        }
+
+
     }
-
-
 }
 
